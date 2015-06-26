@@ -19,9 +19,10 @@ public class FluxScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        this.transform.localScale = new Vector3(Time.deltaTime * 50.0f, transform.localScale.y, transform.localScale.z);
         if (expand)
         {
-            r.sizeDelta.Scale(new Vector2(r.rect.xMax + 0.5f * Time.deltaTime, 1f));
+            r.sizeDelta.Scale(new Vector2(r.rect.xMax + 0.1f * Time.deltaTime, 1f));
             if (r.rect.xMax >= endXScale)
             {
                 expand = false;
@@ -29,7 +30,7 @@ public class FluxScript : MonoBehaviour {
         }
         else
         {
-            r.sizeDelta.Scale(new Vector2(r.rect.xMax - 0.5f * Time.deltaTime, 1f));
+            r.sizeDelta.Scale(new Vector2(r.rect.xMax - 0.1f * Time.deltaTime, 1f));
             if (r.rect.xMax <= startXScale)
             {
                 expand = true;
