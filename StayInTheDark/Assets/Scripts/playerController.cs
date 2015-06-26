@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewBehaviourScript : MonoBehaviour 
+public class playerController : MonoBehaviour 
 {
     public float speed = 2.5f; 
 
@@ -18,13 +18,15 @@ public class NewBehaviourScript : MonoBehaviour
         Vector3 translate = new Vector3(Input.acceleration.x, Input.acceleration.y, -Input.acceleration.z);
         transform.Translate(translate * speed * Time.deltaTime);
 
+
+
         if (Input.GetButtonDown("Horizontal"))
         {
             transform.Translate(new Vector3((Input.GetAxis("Horizontal") * speed * Time.deltaTime), 0.0f, 0.0f));
         }
         else if (Input.GetButtonDown("Horizontal"))
         {
-            transform.Translate(new Vector3( 0.0f,(Input.GetAxis("Horizontal") * speed * Time.deltaTime) 0.0f));
+            transform.Translate(new Vector3( 0.0f,(Input.GetAxis("Horizontal") * speed * Time.deltaTime), 0.0f));
         }
     }
 }
