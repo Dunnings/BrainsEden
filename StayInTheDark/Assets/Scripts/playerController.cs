@@ -24,7 +24,7 @@ public class NewBehaviourScript : MonoBehaviour
         }
         else if (Input.GetButtonDown("Horizontal"))
         {
-            transform.Translate(new Vector3( 0.0f,(Input.GetAxis("Horizontal") * speed * Time.deltaTime) 0.0f));
+            transform.Translate(new Vector3(0.0f,(Input.GetAxis("Horizontal") * speed * Time.deltaTime), 0.0f));
         }
     }
 }
