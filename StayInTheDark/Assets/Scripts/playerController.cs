@@ -9,8 +9,6 @@ public class playerController : MonoBehaviour
 	void Update () 
     {
         move();
-
-	
 	}
 
     void move()
@@ -18,15 +16,13 @@ public class playerController : MonoBehaviour
         Vector3 translate = new Vector3(Input.acceleration.x, Input.acceleration.y, -Input.acceleration.z);
         transform.Translate(translate * speed * Time.deltaTime);
 
-
-
-        if (Input.GetButtonDown("Horizontal"))
+        if (Input.GetButton("Horizontal"))
         {
             transform.Translate(new Vector3((Input.GetAxis("Horizontal") * speed * Time.deltaTime), 0.0f, 0.0f));
         }
-        else if (Input.GetButtonDown("Horizontal"))
+        else if (Input.GetButton("Vertical"))
         {
-            transform.Translate(new Vector3( 0.0f,(Input.GetAxis("Horizontal") * speed * Time.deltaTime), 0.0f));
+            transform.Translate(new Vector3(0.0f, (Input.GetAxis("Vertical") * speed * Time.deltaTime), 0.0f));
         }
     }
 }
