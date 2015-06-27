@@ -4,7 +4,6 @@ using System.Collections;
 public class playerController : MonoBehaviour
 {
     public float speed = 10f;
-
     // Update is called once per frame
     void Update()
     {
@@ -27,5 +26,6 @@ public class playerController : MonoBehaviour
         {
             transform.Translate(new Vector3(0.0f, (Input.GetAxis("Vertical") * speed * 0.5f * Time.deltaTime), 0.0f));
         }
+
     }
 }

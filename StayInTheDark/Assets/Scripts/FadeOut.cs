@@ -5,11 +5,12 @@ using UnityEngine.UI;
 public class FadeOut : MonoBehaviour {
 
     public SpriteRenderer im;
-    private float op = 1.0f;
+    private float start = 1.0f;
+    public float stop = 0.0f;
 
 	// Use this for initialization
 	void Start () {
-        im.color = new Color(0.0f, 0.0f, 0.0f, 1.0f);
+        im.color = new Color(0.0f, 0.0f, 0.0f, start);
 	}
 	
 	// Update is called once per frame
@@ -25,7 +26,6 @@ public class FadeOut : MonoBehaviour {
      private float fadeDir = -1;
  
      void OnGUI(){
-     
          alpha += fadeDir * fadeSpeed * Time.deltaTime;  
          alpha = Mathf.Clamp01(alpha);   
      
