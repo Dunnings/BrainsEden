@@ -19,4 +19,9 @@ public class MenuScript : MonoBehaviour {
     {
         Application.LoadLevel(1);
     }
+
+    public void clickExit()
+    {
+        Application.Quit();
+    }
 }
