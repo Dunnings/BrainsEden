@@ -9,7 +9,6 @@ public class Level : MonoBehaviour {
 
     void Start()
     {
-
         level = this;
         colourManager.m_colourManager.generateColour();
     }
@@ -43,6 +42,7 @@ public class Level : MonoBehaviour {
 
     void FAIL()
     {
+        colourManager.m_colourManager.genColours();
         Debug.Log("Ending");
         Player.Instance.RESET();
         DamageAudioManager.Instance.RESET();
