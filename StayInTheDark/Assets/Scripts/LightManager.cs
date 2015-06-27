@@ -51,7 +51,7 @@ public class LightManager : MonoBehaviour
 
         Debug.DrawLine(new Vector3(player.transform.position.x, player.transform.position.y, 0f), new Vector3(light.transform.position.x, light.transform.position.y, 0f), new Color(1.0f, 0f, 0f));
 
-        if(newHit.collider != null){
+        if(newHit != null && newHit.collider != null){
             //Debug.Log(newHit.collider.GetType());
             return false;
         }
