@@ -5,32 +5,34 @@ using System.Collections.Generic;
 public class colourManager : MonoBehaviour 
 {
     public List <Material> m_materials = new List<Material>();
-    public List <List<Color>> m_colour = new List<List<Color>>();
+    public List<List<Color32>> m_colour = new List<List<Color32>>();
 
     public static colourManager m_colourManager;
 
-    void init ()
+    void Awake ()
     {
-        m_colourManager = new colourManager();
+        m_colourManager = this;
+        m_colour.Add(new List<Color32>());
+        m_colour[0].Add(new Color32(234, 144, 49,255)); //1light 
+        m_colour[0].Add(new Color32(203, 144, 49, 255)); //object
+        m_colour[0].Add(new Color(186, 125, 42, 255)); //back
 
-        m_colour.Add(new List<Color>());
-        m_colour[0][0] = new Color(234, 144, 49); //light 
-        m_colour[0][1] = new Color(203, 144, 49); //object
-        m_colour[0][2] = new Color(186, 125, 42); //back
+        m_colour.Add(new List<Color32>());
+        m_colour[1].Add(new Color32(105, 132, 210, 255));
+        m_colour[1].Add(new Color32(79, 109, 182, 255));
+        m_colour[1].Add(new Color32(57, 85, 165, 255));
 
-        m_colour.Add(new List<Color>());
-        m_colour[1][0] = new Color(105, 132, 210);
-        m_colour[1][1] = new Color(79, 109, 182);
-        m_colour[1][2] = new Color(57, 85, 165);
+        m_colour.Add(new List<Color32>());
+        m_colour[2].Add(new Color32(201, 125, 202, 255));
+        m_colour[2].Add(new Color32(185, 69, 197, 255));
+        m_colour[2].Add(new Color32(206, 90, 208, 255));
 
-        m_colour.Add(new List<Color>());
-        m_colour[2][0] = new Color(201, 125, 202);
-        m_colour[2][1] = new Color(185, 69, 197);
-        m_colour[2][2] = new Color(206, 90, 208);
+        Debug.Log("Added colours");
     }
 		
-	void generateColour()
+	public void generateColour()
     {
+        Debug.Log(m_colour.Count);
         //get random index
         int index = Random.Range(0, m_colour.Count);
         int i = 0;

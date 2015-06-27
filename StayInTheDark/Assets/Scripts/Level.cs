@@ -9,7 +9,9 @@ public class Level : MonoBehaviour {
 
     void Start()
     {
+
         level = this;
+        colourManager.m_colourManager.generateColour();
     }
 
     public enum GameState
