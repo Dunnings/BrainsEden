@@ -25,13 +25,20 @@ public class Player : MonoBehaviour {
 
     public void Damage(int amnt)
     {
-        if (Time.time - lastDamaged > immunity)
+        if (currentHealth > 0)
         {
-            Debug.Log((float)((float)currentHealth / (float)maxHealth));
-            DamageAudioManager.Instance.playDamageSound((float)((float)currentHealth / (float)maxHealth));
-            currentHealth = Mathf.Max(0, currentHealth - amnt);
-            t.text = currentHealth.ToString();
-            lastDamaged = Time.time;
+            if (Time.time - lastDamaged > immunity)
+            {
+                //Debug.Log((float)((float)currentHealth / (float)maxHealth));
+                DamageAudioManager.Instance.playDamageSound((float)((float)currentHealth / (float)maxHealth));
+                currentHealth = Mathf.Max(0, currentHealth - amnt);
+                t.text = currentHealth.ToString();
+                lastDamaged = Time.time;
+            }
+        }
+        else
+        {
+            DamageAudioManager.Instance.deathSound();
         }
     }
 
