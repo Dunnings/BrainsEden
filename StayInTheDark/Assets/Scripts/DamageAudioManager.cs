@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class DamageAudioManager : MonoBehaviour {
 
     public static DamageAudioManager Instance;
 
-    public AudioClip deathSoundEffect;
+    public List<AudioClip> deathSoundEffect;
     public AudioSource dmgTick;
     public float lastPlay;
     public bool over = false;
@@ -32,7 +33,6 @@ public class DamageAudioManager : MonoBehaviour {
 
     public void playDamageSound(float percent)
     {
-        
         lastPlay = Time.time;
         if (!dmgTick.isPlaying)
         {
@@ -46,7 +46,8 @@ public class DamageAudioManager : MonoBehaviour {
         if (doOnce)
         {
             dmgTick.Stop();
-            dmgTick.PlayOneShot(deathSoundEffect);
+            int ran = Random.Range(0, deathSoundEffect.Count);
+            dmgTick.PlayOneShot(deathSoundEffect[ran]);
             doOnce = false;
             over = true;
         }
