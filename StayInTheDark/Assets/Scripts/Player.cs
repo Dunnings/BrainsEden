@@ -32,4 +32,9 @@ public class Player : MonoBehaviour {
             lastDamaged = Time.time;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Level.level.gameState = Level.GameState.END;
+    }
 }

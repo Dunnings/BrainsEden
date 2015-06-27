@@ -3,20 +3,23 @@ using System.Collections;
 
 public class Level : MonoBehaviour {
 
+    public static Level level;
+
+    void Start()
+    {
+        level = this;
+    }
+
     public enum GameState
     {
         PREPLAY,
         PLAYING,
         END,
+        LOADLEVEL,
         RESET,
     }
 
-    private GameState gameState;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
+    public GameState gameState = GameState.PLAYING;
 
     void UpdatePrePlay()
     {
@@ -29,7 +32,14 @@ public class Level : MonoBehaviour {
 
     void UpdateEnd()
     {
+        Debug.Log("Ending");
+        Application.LoadLevel("LevelOne");
+        gameState = GameState.PREPLAY;
+    }
 
+    void LoadLevel()
+    {
+        Debug.Log("End Level");
     }
 
     void Reset()
@@ -44,10 +54,15 @@ public class Level : MonoBehaviour {
             case GameState.PREPLAY:
                 break;
             case GameState.PLAYING:
+                UpdatePlaying();
                 break;
             case GameState.END:
+                UpdateEnd();
                 break;
             case GameState.RESET:
+                break;
+            case GameState.LOADLEVEL:
+                LoadLevel();
                 break;
         }
 	}
