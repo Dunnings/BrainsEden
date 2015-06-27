@@ -41,4 +41,9 @@ public class Player : MonoBehaviour {
             DamageAudioManager.Instance.deathSound();
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        Level.level.gameState = Level.GameState.END;
+    }
 }

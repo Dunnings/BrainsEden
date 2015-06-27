@@ -9,7 +9,8 @@ public class Rotation : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         this.transform.Rotate(new Vector3(0, 0, 1), 0.5f);
 
         //transform.position = new Vector3(Mathf.Sin(Time.time * 0.08f) * 4.0f, transform.position.y, transform.position.z);
