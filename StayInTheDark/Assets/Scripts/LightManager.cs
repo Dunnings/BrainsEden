@@ -54,8 +54,9 @@ public class LightManager : MonoBehaviour
         //RaycastHit2D hit = Physics2D.Raycast(new Vector2(player.transform.position.x, player.transform.position.x), light.transform.position - player.transform.position);
         RaycastHit2D newHit = Physics2D.Raycast(new Vector2(light.transform.position.x, light.transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y) - new Vector2(light.transform.position.x, light.transform.position.y));
         Debug.DrawRay(new Vector2(light.transform.position.x, light.transform.position.y), new Vector2(player.transform.position.x, player.transform.position.y) - new Vector2(light.transform.position.x, light.transform.position.y));
-        
-        if(newHit != null){
+
+        if (newHit != null)
+        {
             if (newHit.collider != null)
             {
                 Debug.DrawLine(new Vector3(light.transform.position.x, light.transform.position.y, 0f), new Vector3(newHit.collider.transform.position.x, newHit.collider.transform.position.y, 0f), new Color(1.0f, 1.0f, 0f));

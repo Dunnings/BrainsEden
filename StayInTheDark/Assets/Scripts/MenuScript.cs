@@ -17,6 +17,6 @@ public class MenuScript : MonoBehaviour {
 
     public void clickPlay()
     {
-        Application.LoadLevel("LevelOne");
+        Application.LoadLevel("level_1");
     }
 }

@@ -33,7 +33,7 @@ public class Level : MonoBehaviour {
     void UpdateEnd()
     {
         Debug.Log("Ending");
-        Application.LoadLevel("LevelOne");
+        Application.LoadLevel("level_1");
         gameState = GameState.PREPLAY;
     }
 
