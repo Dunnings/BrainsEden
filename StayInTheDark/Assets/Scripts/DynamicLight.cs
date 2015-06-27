@@ -64,6 +64,20 @@ public class DynamicLight : MonoBehaviour {
 
 	void getAllMeshes(){
 		allMeshes = FindObjectsOfType(typeof(PolygonCollider2D)) as PolygonCollider2D[];
+        List<PolygonCollider2D> newList = new List<PolygonCollider2D>();
+        for (int i = 0; i < allMeshes.Length; i++)
+        {
+            Debug.Log(allMeshes[i].gameObject == Player.Instance);
+            if (allMeshes[i].gameObject == Player.Instance)
+            {
+                Debug.Log("FOUND PLAYER");
+            }
+            else
+            {
+                newList.Add(allMeshes[i]);
+            }
+        }
+        allMeshes = newList.ToArray();
 	}
 
 	void resetBounds(){
@@ -270,9 +284,6 @@ public class DynamicLight : MonoBehaviour {
 		}
 		
 
-
-
-
 		//--Step 3: Generate vectors for light cast--//
 		//---------------------------------------------------------------------//
 
@@ -351,9 +362,6 @@ public class DynamicLight : MonoBehaviour {
 						//Debug.Log("changing");
 					}
 				}
-				
-				
-				
 			}
 
 
