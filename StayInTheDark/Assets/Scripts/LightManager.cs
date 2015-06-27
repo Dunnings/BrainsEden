@@ -29,7 +29,11 @@ public class LightManager : MonoBehaviour
         if (isInAnyLight(player.gameObject, allLights))
         {
             player.Damage(lightDmg);
+            //Debug.Log("HIT");
+            return;
         }
+
+        //Debug.Log("NO HIT");
     }
 
     public bool isInAnyLight(GameObject player, List<GameObject> allLights)
@@ -48,7 +52,7 @@ public class LightManager : MonoBehaviour
     private bool isInLight(GameObject player, GameObject light)
     {
         RaycastHit2D newHit = Physics2D.Raycast(new Vector2(player.transform.position.x, player.transform.position.y), new Vector2(light.transform.position.x, light.transform.position.y));
-
+        Debug.Log(newHit.fraction);
         Debug.DrawLine(new Vector3(player.transform.position.x, player.transform.position.y, 0f), new Vector3(light.transform.position.x, light.transform.position.y, 0f), new Color(1.0f, 0f, 0f));
 
         if(newHit != null && newHit.collider != null){
