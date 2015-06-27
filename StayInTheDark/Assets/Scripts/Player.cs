@@ -4,6 +4,7 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
+    public Vector3 startPos;
 
     public static Player Instance;
     public Text t;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour {
 	void Start () {
         Instance = this;
         lastDamaged = Time.time;
+        startPos = this.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -49,5 +51,12 @@ public class Player : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
         Level.level.gameState = Level.GameState.END;
+    }
+
+    public void RESET()
+    {
+        transform.position = startPos;
+        currentHealth = maxHealth;
+        lastDamaged = Time.time;
     }
 }

@@ -15,6 +15,12 @@ public class DamageAudioManager : MonoBehaviour {
 	void Start () {
         Instance = this;
 	}
+
+    public void RESET()
+    {
+        over = true;
+        doOnce = true;
+    }
 	
 	// Update is called once per frame
 	void Update () {

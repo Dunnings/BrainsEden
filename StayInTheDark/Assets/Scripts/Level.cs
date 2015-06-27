@@ -33,8 +33,9 @@ public class Level : MonoBehaviour {
     void UpdateEnd()
     {
         Debug.Log("Ending");
-        Application.LoadLevel("level_1");
-        gameState = GameState.PREPLAY;
+        Player.Instance.RESET();
+        DamageAudioManager.Instance.RESET();
+        gameState = GameState.PLAYING;
     }
 
     void LoadLevel()
