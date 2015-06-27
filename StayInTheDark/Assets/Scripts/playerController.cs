@@ -8,7 +8,10 @@ public class playerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        move();
+        if (Level.level.gameState == Level.GameState.PLAYING)
+        {
+            move();
+        }
     }
 
     void move()

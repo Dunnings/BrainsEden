@@ -53,11 +53,13 @@ public class DynamicLight : MonoBehaviour {
 	
 
 	void Update(){
-
-		getAllMeshes();
-		setLight ();
-		renderLightMesh ();
-		resetBounds ();
+        if (Level.level.gameState == Level.GameState.PLAYING)
+        {
+            getAllMeshes();
+            setLight();
+            renderLightMesh();
+            resetBounds();
+        }
 
 	}
 
