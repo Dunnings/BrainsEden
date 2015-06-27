@@ -5,6 +5,8 @@ public class Level : MonoBehaviour {
 
     public static Level level;
 
+    public Level nextLvl;
+
     void Start()
     {
         level = this;
@@ -14,7 +16,8 @@ public class Level : MonoBehaviour {
     {
         PREPLAY,
         PLAYING,
-        END,
+        FAIL,
+        WIN,
         LOADLEVEL,
         RESET,
     }
@@ -30,12 +33,29 @@ public class Level : MonoBehaviour {
 
     }
 
-    void UpdateEnd()
+    void NextLevel()
+    {
+        
+    }
+
+    void FAIL()
     {
         Debug.Log("Ending");
         Player.Instance.RESET();
         DamageAudioManager.Instance.RESET();
         gameState = GameState.PLAYING;
+    }
+
+    void WIN()
+    {
+        if (Application.levelCount-1 > Application.loadedLevel)
+        {
+            Application.LoadLevel(Application.loadedLevel + 1);
+        }
+        else
+        {
+            Application.LoadLevel(0);
+        }
     }
 
     void LoadLevel()
@@ -57,8 +77,11 @@ public class Level : MonoBehaviour {
             case GameState.PLAYING:
                 UpdatePlaying();
                 break;
-            case GameState.END:
-                UpdateEnd();
+            case GameState.FAIL:
+                FAIL();
+                break;
+            case GameState.WIN:
+                WIN();
                 break;
             case GameState.RESET:
                 break;

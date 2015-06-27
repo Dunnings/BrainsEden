@@ -44,13 +44,13 @@ public class Player : MonoBehaviour {
         //else
         //{
             DamageAudioManager.Instance.deathSound();
-            Level.level.gameState = Level.GameState.END;
+            Level.level.gameState = Level.GameState.FAIL;
         //}
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Level.level.gameState = Level.GameState.END;
+        Level.level.gameState = Level.GameState.WIN;
     }
 
     public void RESET()
