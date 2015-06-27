@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     public int currentHealth = 100;
 
     float lastDamaged;
-    float immunity = 0.5f;
+    float immunity = 0.05f;
 
 
 	// Use this for initialization
@@ -27,6 +27,8 @@ public class Player : MonoBehaviour {
     {
         if (Time.time - lastDamaged > immunity)
         {
+            Debug.Log((float)((float)currentHealth / (float)maxHealth));
+            DamageAudioManager.Instance.playDamageSound((float)((float)currentHealth / (float)maxHealth));
             currentHealth = Mathf.Max(0, currentHealth - amnt);
             t.text = currentHealth.ToString();
             lastDamaged = Time.time;
