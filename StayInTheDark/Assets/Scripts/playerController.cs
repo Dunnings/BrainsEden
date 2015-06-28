@@ -15,7 +15,7 @@ public class playerController : MonoBehaviour
 
     void move()
     {
-        if (Input.acceleration.x > 0.1f || Input.acceleration.x < -0.1f || Input.acceleration.y > 0.1f || Input.acceleration.y < -0.1f)
+        if (Input.acceleration.x > 0.08f || Input.acceleration.x < -0.08f || Input.acceleration.y > 0.08f || Input.acceleration.y < -0.08f)
         {
             Vector3 translate = new Vector3(Input.acceleration.x, Input.acceleration.y, -Input.acceleration.z);
             transform.Translate(translate * speed * Time.deltaTime);
