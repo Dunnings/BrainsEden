@@ -5,8 +5,6 @@ public class Level : MonoBehaviour {
 
     public static Level level;
 
-    public Level nextLvl;
-
     void Start()
     {
         level = this;
@@ -44,7 +42,7 @@ public class Level : MonoBehaviour {
         colourManager.m_colourManager.genColours();
         Debug.Log("Ending");
         Player.Instance.RESET();
-        DamageAudioManager.Instance.RESET();
+        AudioManager.Instance.RESET();
         gameState = GameState.PLAYING;
     }
 
