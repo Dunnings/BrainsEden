@@ -15,8 +15,11 @@ public class playerController : MonoBehaviour
 
     void move()
     {
-        Vector3 translate = new Vector3(Input.acceleration.x, Input.acceleration.y, -Input.acceleration.z);
-        transform.Translate(translate * speed * Time.deltaTime);
+        if (Input.acceleration.x > 0.1f || Input.acceleration.x < -0.1f || Input.acceleration.y > 0.1f || Input.acceleration.y < -0.1f)
+        {
+            Vector3 translate = new Vector3(Input.acceleration.x, Input.acceleration.y, -Input.acceleration.z);
+            transform.Translate(translate * speed * Time.deltaTime);
+        }
 
         if (Input.GetButton("Horizontal"))
         {
