@@ -12,19 +12,24 @@ public class PauseMenu : MonoBehaviour {
 	void Update () {
         if (Input.GetKeyUp(KeyCode.P))
         {
-            switch (Level.level.gameState)
-            {
-                case Level.GameState.PAUSED:
-                    Level.level.gameState = Level.GameState.PLAYING;
-                    this.GetComponent<Canvas>().enabled = false;
-                    break;
-                case Level.GameState.PLAYING:
-                    Level.level.gameState = Level.GameState.PAUSED;
-                    this.GetComponent<Canvas>().enabled = true;
-                    break;
-            }
+            PAUSE();
         }   
 	}
+
+    public void PAUSE()
+    {
+        switch (Level.level.gameState)
+        {
+            case Level.GameState.PAUSED:
+                Level.level.gameState = Level.GameState.PLAYING;
+                this.GetComponent<Canvas>().enabled = false;
+                break;
+            case Level.GameState.PLAYING:
+                Level.level.gameState = Level.GameState.PAUSED;
+                this.GetComponent<Canvas>().enabled = true;
+                break;
+        }
+    }
 
     public void exitPause()
     {
