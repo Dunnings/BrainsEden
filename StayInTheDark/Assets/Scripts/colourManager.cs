@@ -28,7 +28,7 @@ public class colourManager : MonoBehaviour
         //m_colour[2].Add(new Color32(185, 69, 197, 255));
         //m_colour[2].Add(new Color32(206, 90, 208, 255));
 
-        Debug.Log("Added colours");
+        //Debug.Log("Added colours");
     }
 
     public void genColours()
@@ -66,7 +66,6 @@ public class colourManager : MonoBehaviour
 		
 	public void generateColour()
     {
-        Debug.Log(m_colour.Count);
         //get random index
         int index = Random.Range(0, m_colour.Count);
         int i = 0;

@@ -40,7 +40,6 @@ public class Level : MonoBehaviour {
     void FAIL()
     {
         colourManager.m_colourManager.genColours();
-        Debug.Log("Ending");
         Player.Instance.RESET();
         AudioManager.Instance.RESET();
         gameState = GameState.PLAYING;
