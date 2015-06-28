@@ -17,8 +17,20 @@ public class AudioManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Instance = this;
+        if (!PlayerPrefs.HasKey("volume"))
+        {
+            PlayerPrefs.SetInt("volume", 1);
+
+        }
+        SetVolume(PlayerPrefs.GetInt("volume"));
         bgMusic.Play();
 	}
+
+    public void SetVolume(int v)
+    {
+        hurtSource.volume = v;
+        bgMusic.volume = v;
+    }
 
     public void RESET()
     {

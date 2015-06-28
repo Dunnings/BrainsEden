@@ -8,6 +8,16 @@ public class MenuScript : MonoBehaviour {
     public Button levelLeft;
     public Button levelRight;
 
+    public Sprite audOff;
+    public Sprite audOn;
+
+    public Image audioIcon;
+
+    public AudioClip leftrightClickSound;
+
+    public AudioSource audSource;
+    public AudioSource audSource2;
+
     int selectedLevel = 0;
 
 	// Use this for initialization
@@ -17,7 +27,35 @@ public class MenuScript : MonoBehaviour {
             selectedLevel = 1;
             level.text = "1" ;
         }
+        toggleAudio();
+        
 	}
+
+    public void toggleAudio()
+    {
+        if (PlayerPrefs.HasKey("volume"))
+        {
+            if (PlayerPrefs.GetInt("volume") == 0)
+            {
+                audioIcon.sprite = audOff;
+                audSource.volume = 0f;
+                audSource2.volume = 0f;
+            }
+            else
+            {
+                audioIcon.sprite = audOn;
+                audSource.volume = 1f;
+                audSource2.volume = 1f;
+            }
+
+        }
+        else
+        {
+            audioIcon.sprite = audOn;
+            audSource.volume = 1f;
+            audSource2.volume = 1f;
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -47,6 +85,7 @@ public class MenuScript : MonoBehaviour {
 
     public void clickRight()
     {
+        audSource2.PlayOneShot(leftrightClickSound);
         if (selectedLevel < Application.levelCount-1)
         {
             selectedLevel++;
@@ -61,6 +100,7 @@ public class MenuScript : MonoBehaviour {
 
     public void clickLeft()
     {
+        audSource2.PlayOneShot(leftrightClickSound);
         if (selectedLevel >1)
         {
             selectedLevel--;
