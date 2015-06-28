@@ -20,14 +20,12 @@ public class MenuScript : MonoBehaviour {
 
     int selectedLevel = 0;
 
-    public GameObject creditsPanel;
-
 	// Use this for initialization
 	void Start () {
         if (Application.levelCount > 1)
         {
             selectedLevel = 1;
-            level.text = "Level: 1" ;
+            level.text = "1" ;
         }
         toggleAudio();
         
@@ -91,12 +89,12 @@ public class MenuScript : MonoBehaviour {
         if (selectedLevel < Application.levelCount-1)
         {
             selectedLevel++;
-            level.text = "Level: " + selectedLevel.ToString();
+            level.text = selectedLevel.ToString();
         }
         else
         {
             selectedLevel = 1;
-            level.text = "Level: " + selectedLevel.ToString();
+            level.text = selectedLevel.ToString();
         }
     }
 
@@ -106,22 +104,12 @@ public class MenuScript : MonoBehaviour {
         if (selectedLevel >1)
         {
             selectedLevel--;
-            level.text = "Level: " + selectedLevel.ToString();
+            level.text = selectedLevel.ToString();
         }
         else
         {
             selectedLevel = Application.levelCount-1;
-            level.text = "Level: " + selectedLevel.ToString();
+            level.text = selectedLevel.ToString();
         }
-    }
-
-    public void clickCredits()
-    {
-        creditsPanel.SetActive(true);
-    }
-
-    public void creditsBack()
-    {
-        creditsPanel.SetActive(false);
     }
 }

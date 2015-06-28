@@ -18,17 +18,15 @@ public class Player : MonoBehaviour {
 
     private float playerDeaths = 0;
 
+    
+    
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
         Instance = this;
         lastDamaged = Time.time;
         startPos = this.transform.position;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	}	
 
     public void Damage(int amnt)
     {
