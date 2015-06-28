@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
 
     public static Player Instance;
     public Text t;
+    public Text deathText;
 
     public int maxHealth = 100;
     public int currentHealth = 100;
@@ -15,6 +16,7 @@ public class Player : MonoBehaviour {
     float lastDamaged;
     float immunity = 0.02f;
 
+    private float playerDeaths = 0;
 
 	// Use this for initialization
 	void Start () {
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour {
         //}
         //else
         //{
+        playerDeaths++;
+        deathText.text = "Deaths: " + playerDeaths;
         AudioManager.Instance.deathSound();
         Level.level.gameState = Level.GameState.FAIL;
         //}
