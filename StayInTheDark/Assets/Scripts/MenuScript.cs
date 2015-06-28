@@ -13,6 +13,8 @@ public class MenuScript : MonoBehaviour {
 
     public Image audioIcon;
 
+    public AudioClip leftrightClickSound;
+
     public AudioSource audSource;
     public AudioSource audSource2;
 
@@ -83,6 +85,7 @@ public class MenuScript : MonoBehaviour {
 
     public void clickRight()
     {
+        audSource2.PlayOneShot(leftrightClickSound);
         if (selectedLevel < Application.levelCount-1)
         {
             selectedLevel++;
@@ -97,6 +100,7 @@ public class MenuScript : MonoBehaviour {
 
     public void clickLeft()
     {
+        audSource2.PlayOneShot(leftrightClickSound);
         if (selectedLevel >1)
         {
             selectedLevel--;
