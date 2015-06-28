@@ -43,8 +43,8 @@ public class Player : MonoBehaviour {
         //}
         //else
         //{
-            DamageAudioManager.Instance.deathSound();
-            Level.level.gameState = Level.GameState.FAIL;
+        AudioManager.Instance.deathSound();
+        Level.level.gameState = Level.GameState.FAIL;
         //}
     }
 

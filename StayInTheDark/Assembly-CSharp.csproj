@@ -46,7 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\DamageAudioManager.cs" />
+     <Compile Include="Assets\Scripts\AudioManager.cs" />
+     <Compile Include="Assets\Scripts\AudioToggle.cs" />
      <Compile Include="Assets\Scripts\DynamicLight.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\FadeOut.cs" />
