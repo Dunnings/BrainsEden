@@ -5,7 +5,7 @@ public class colorfade : MonoBehaviour {
 
     public Camera mainCam;
     private float startTime;
-    private float duration = 2f;
+    public float duration = 2f;
 
 	// Use this for initialization FOR kiki fudlkjj;vlF
 	void Start () {
