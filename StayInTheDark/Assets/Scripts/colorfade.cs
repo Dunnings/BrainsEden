@@ -7,7 +7,7 @@ public class colorfade : MonoBehaviour {
     private float startTime;
     private float duration = 2f;
 
-	// Use this for initialization
+	// Use this for initialization FOR kiki fudlkjj;vlF
 	void Start () {
         startTime = Time.time;
         lerpedColor = mainCam.backgroundColor;

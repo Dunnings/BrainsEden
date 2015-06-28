@@ -17,7 +17,6 @@ public class Level : MonoBehaviour {
     {
         PREPLAY,
         PLAYING,
-        PAUSED,
         FAIL,
         WIN,
         LOADLEVEL,
@@ -70,6 +69,11 @@ public class Level : MonoBehaviour {
     {
 
     }
+
+    public void MainMenu()
+    {
+        Application.LoadLevel(0);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -87,8 +91,6 @@ public class Level : MonoBehaviour {
                 WIN();
                 break;
             case GameState.RESET:
-                break;
-            case GameState.PAUSED: 
                 break;
             case GameState.LOADLEVEL:
                 LoadLevel();
