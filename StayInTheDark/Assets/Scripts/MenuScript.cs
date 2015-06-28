@@ -20,6 +20,8 @@ public class MenuScript : MonoBehaviour {
 
     int selectedLevel = 0;
 
+    public GameObject creditsPanel;
+
 	// Use this for initialization
 	void Start () {
         if (Application.levelCount > 1)
@@ -111,5 +113,15 @@ public class MenuScript : MonoBehaviour {
             selectedLevel = Application.levelCount-1;
             level.text = selectedLevel.ToString();
         }
+    }
+
+    public void clickCredits()
+    {
+        creditsPanel.SetActive(true);
+    }
+
+    public void creditsBack()
+    {
+        creditsPanel.SetActive(false);
     }
 }
