@@ -5,8 +5,6 @@ public class Level : MonoBehaviour {
 
     public static Level level;
 
-    public Level nextLvl;
-
     void Start()
     {
         level = this;
