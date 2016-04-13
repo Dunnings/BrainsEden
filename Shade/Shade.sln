@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shade.CSharp.Plugins", "Shade.CSharp.Plugins.csproj", "{A28CCF06-1899-61D3-7BD0-27564F935C8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shade.CSharp", "Shade.CSharp.csproj", "{C5389114-2DF7-468C-0601-C2FD8CF6D51C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A28CCF06-1899-61D3-7BD0-27564F935C8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28CCF06-1899-61D3-7BD0-27564F935C8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28CCF06-1899-61D3-7BD0-27564F935C8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28CCF06-1899-61D3-7BD0-27564F935C8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5389114-2DF7-468C-0601-C2FD8CF6D51C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5389114-2DF7-468C-0601-C2FD8CF6D51C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5389114-2DF7-468C-0601-C2FD8CF6D51C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5389114-2DF7-468C-0601-C2FD8CF6D51C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
