@@ -39,4 +39,10 @@ public class PlayerMovement : MonoBehaviour {
 
 
     }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.name);
+        transform.position = new Vector3(-6f, 0f, 0f);
+    }
 }

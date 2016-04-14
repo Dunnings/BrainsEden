@@ -105,6 +105,8 @@ public class Mesh_Light : MonoBehaviour
     private Vector3[] m_tempMeshVertices = new Vector3[m_meshVertexCount];
     private int[] m_tempMeshTriangles = new int[m_meshVertexCount * 3];
 
+    public PolygonCollider2D m_collider;
+
     /// <summary>
     /// Run on light creation
     /// </summary>
@@ -221,7 +223,17 @@ public class Mesh_Light : MonoBehaviour
 
         //First point is located at the lights origin
         Vector3 origin = transform.position;
-        
+
+        if (m_collider != null)
+        {
+            Vector2[] points = new Vector2[m_vector3PointList.Count];
+            for (int i = 0; i < m_vector3PointList.Count; i++)
+            {
+                points[i] = m_vector3PointList[i] - origin;
+            }
+            m_collider.SetPath(0, points);
+        }
+
         //Convert points to local space vertices
         //If the current vertex is not needed, set it to the last point in the list
         m_tempMeshVertices = m_meshFilter.sharedMesh.vertices;
