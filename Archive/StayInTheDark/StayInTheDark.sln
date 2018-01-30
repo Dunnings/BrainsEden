@@ -1,11 +1,11 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{E61F2510-5D2F-6272-5210-D16386D5DC9C}") = "StayInTheDark", "Assembly-CSharp-firstpass.csproj", "{2B91F175-FB6C-CDE5-24A2-C4FCD447A6A6}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StayInTheDark", "Assembly-CSharp-firstpass.csproj", "{2B91F175-FB6C-CDE5-24A2-C4FCD447A6A6}"
 EndProject
-Project("{E61F2510-5D2F-6272-5210-D16386D5DC9C}") = "StayInTheDark", "Assembly-CSharp.csproj", "{3CFD5CC4-F937-5D8A-1108-AD8E8508ACB0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StayInTheDark", "Assembly-CSharp.csproj", "{3CFD5CC4-F937-5D8A-1108-AD8E8508ACB0}"
 EndProject
-Project("{E61F2510-5D2F-6272-5210-D16386D5DC9C}") = "StayInTheDark", "Assembly-CSharp-Editor.csproj", "{DFFA4239-DAEF-2152-B744-1951A1DEAD47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StayInTheDark", "Assembly-CSharp-Editor.csproj", "{DFFA4239-DAEF-2152-B744-1951A1DEAD47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,5 +48,4 @@ Global
 		$3.inheritsScope = text/plain
 		$3.scope = text/plain
 	EndGlobalSection
-
 EndGlobal
